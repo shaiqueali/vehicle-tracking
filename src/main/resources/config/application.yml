@@ -1,0 +1,77 @@
+spring:
+  application:
+    name: ${SPRING_APPLICATION_NAME:vehicle-tracking}
+  main:
+    allow-bean-definition-overriding: true
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/vehicle?useLegacyDatetimeCode=false
+#    username: root
+#    password: Welcome1
+#    hikari:
+#      connection-timeout: 60000
+#      maximum-pool-size: 20
+#    jpa:
+#      show-sql: true
+#      generate-ddl: true
+#      hibernate:
+#        ddl-auto: create
+#        able_lazy_load_no_trans: true
+#      properties:
+#        hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#        hibernate.jdbc.batch_size: 1000
+#        jdbc:
+#          time_zone: UTC
+#        event:
+#          merge:
+#            entity_copy_observer: allow
+
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/vehicle?useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: Welcome1
+    validationQuery: SELECT 1
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  sleuth:
+    enabled: true
+
+app:
+  jwtSecret: secret
+  jwtExpirationS: 300
+
+management:
+  server:
+    port: 9081
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+logbook:
+  include:
+    - /**
+  exclude:
+    - /actuator/**
+    - /swagger-ui.html/**
+  filter.enabled: true
+  format.style: http
+  strategy: default
+  obfuscate:
+    parameters:
+      - access_token
+      - password
+      - token
+
