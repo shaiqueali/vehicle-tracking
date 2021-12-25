@@ -27,14 +27,14 @@ it?
 - ## Security
 We need to ensure a device or user cannot update the position of another vehicle.
 As a backend engineer, your tasks will be to :
-● Design the database and data models
-● Implement the REST API
+- Design the database and data models
+-  Implement the REST API
 
 As a backend engineer, you will pay special attention to :
-● Design
-● Security
-● Performance
-● Scalability
-● Maintainability
-● Documentation: None, unless mathematical algorithms
+-  Design
+- Security
+- Performance
+- Scalability
+- Maintainability
+- Documentation: None, unless mathematical algorithms
 Any assumptions, specific reason for a particular choice must be described in the code.
